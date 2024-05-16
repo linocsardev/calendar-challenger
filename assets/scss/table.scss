@@ -1,0 +1,165 @@
+.table-sm td,
+.table-sm th {
+    // padding: 0px 5px;
+    // padding: 5px 10px;
+    padding: 0 0.25rem;
+}
+
+.table {
+    &.table-box {
+        --bs-table-border-color: var(--table-box-cell-border);
+        thead {
+            th {
+                border: 0;
+                padding: 0 5px;
+                text-transform: uppercase;
+                font-size: 12px;
+                color: #737373;
+                font-weight: bold;
+                text-align: center;
+            }
+            th {
+                border-right: 1px solid var(--table-box-cell-border);
+            }
+        }
+        tbody {
+            tr {
+                width: 220px;
+                margin: 5px;
+                position: relative;
+                padding-top: 40px;
+                background: var(--table-box-bg);
+                box-shadow: var(--table-box-shadow);
+                color: var(--table-box-color);
+                border-radius: 7px;
+                padding: 15px;
+                td {
+                    position: relative;
+                    vertical-align: middle;
+                    border-top: 1px solid var(--table-box-cell-border);
+                    border-right: 1px solid var(--table-box-cell-border);
+                    border-color: var(--table-box-cell-border);
+                }
+
+                &.tr_error {
+                    background: #fff3f3;
+                    color: red;
+                }
+                &.tr_success {
+                    background: #f4fff6;
+                    color: #00691d;
+                }
+                &.tr_warning {
+                    background: #fff9e9;
+                    color: #d16a00;
+                }
+                // tr{
+                cursor: pointer;
+                &:hover {
+                    td {
+                        color: #0275d8;
+                    }
+                }
+                td {
+                    .form-control {
+                        border: 1px solid #dcdcdc;
+                        background: var(--fuse-bg-card);
+                    }
+                }
+                &.active {
+                    background: #f9f9f9;
+                    td {
+                        color: #4b83fe;
+                        background: var(--table-box-active-bg);
+                        font-weight: 700;
+                        .form-control {
+                            border: 1px solid #00a0ff;
+                        }
+                    }
+                    .icontable {
+                        background: #4b83fe;
+                        color: white;
+                    }
+
+                    &.tr_error {
+                        background: #fff3f3;
+                        color: red;
+                        td {
+                            background: #fff3f3;
+                            color: red;
+                        }
+                    }
+                    &.tr_success {
+                        background: #f4fff6;
+                        color: #00691d;
+                        td {
+                            background: #f4fff6;
+                            color: #00691d;
+                        }
+                    }
+                    &.tr_warning {
+                        background: #fff9e9;
+                        color: #d16a00;
+                        td {
+                            background: #fff9e9;
+                            color: #d16a00;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .btn-transparente {
+        font-size: 1.5em;
+        line-height: 1;
+        background: transparent;
+        border-radius: 0;
+        color: #4a4a4abf;
+    }
+}
+
+.table-fixed {
+    width: 100%;
+}
+
+.table-fixed thead {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
+    // background: #f5f6fa;
+    box-shadow: 0px 3px 4px #00000012;
+}
+
+.table-fixed thead th {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+.table-datos {
+    &.box-main {
+        overflow: hidden;
+    }
+    tr {
+        td:first-child {
+            background: #f0faff;
+            border-right: 1px solid #dee2e6;
+            font-size: 0.7rem;
+        }
+    }
+}
+
+table,
+.table {
+    margin: 0;
+    tbody {
+        // el hijoo ultimo tr
+        tr:last-child {
+            td {
+                // border: none;
+                border-bottom: none;
+            }
+        }
+    }
+}

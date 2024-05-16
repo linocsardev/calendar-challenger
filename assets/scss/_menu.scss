@@ -1,0 +1,91 @@
+.nav-radius {
+    border-radius: 20px;
+    box-shadow: 0px 21px 78px -12px rgba(194, 194, 194, 1);
+}
+
+.nav.nav-tabs {
+    &._nav_primary {
+        // padding-left: 20px;
+        padding-left: 5px;
+        .nav-link {
+            font-weight: bold;
+            text-align: center;
+            border-left: 1px solid var(--border-color);
+            position: relative;
+
+            &:focus,
+            &:hover {
+                color: black;
+            }
+            &:hover {
+                // border-color: transparent;
+                border-bottom: none;
+            }
+            &:focus-visible {
+                outline: none;
+            }
+
+            // i,
+            // .icon,
+            // .icons {
+            //     position: absolute;
+            //     left: 14px;
+            //     font-size: 20px;
+            //     top: 4px;
+            // }
+            // img {
+            //     position: absolute;
+            //     left: 9px;
+            //     font-size: 20px;
+            //     top: 6px;
+            //     width: 24px;
+            // }
+            &.active{
+                border-right: 0;
+            }
+        }
+        &:not(.nav-icons) {
+            .nav-link {
+                // min-width: 165px;
+                // padding-left: 35px;
+                --bs-nav-link-padding-y: 0.35rem;
+                --bs-nav-link-padding-x: 1rem;
+                padding-left: 0.7rem;
+                line-height: 1;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                border-top: 0;
+
+                i,
+                .icon,
+                .icons {
+                    // position: absolute;
+                    // left: 14px;
+                    // font-size: 20px;
+                    // top: 4px;
+                    font-size: 1.2rem;
+                }
+                img {
+                    // position: absolute;
+                    // left: 9px;
+                    // font-size: 20px;
+                    // top: 6px;
+                    width: 18px;
+                }
+            }
+        }
+        &.nav-icons {
+            .nav-link {
+                i,
+                .icon,
+                .icons {
+                    font-size: 20px;
+                }
+                img {
+                    width: 24px;
+                }
+            }
+        }
+    }
+}

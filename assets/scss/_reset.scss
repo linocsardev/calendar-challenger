@@ -1,0 +1,90 @@
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+p {
+    margin: 0;
+}
+
+// SCROLL
+*::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #a7a4a4;
+    outline: 1px solid slategrey;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ececec;
+}
+
+// MAPAS
+
+.pac-container {
+    z-index: 99999999999;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    margin-top: 4px;
+    .pac-item {
+        padding: 8px;
+    }
+    .pac-item-query {
+        font-size: 17px;
+    }
+}
+
+// LIBRERIA DEL SUBMENU
+context-menu-content .dropdown-menu.show {
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    font-size: 18px;
+    min-width: 220px;
+    padding: 5px 0;
+}
+
+context-menu-content ul li button > div {
+    // padding: 5px 20px;
+    width: 100%;
+}
+
+.table tbody + tbody {
+    border: none;
+}
+
+.owl-dt-inline-container,
+.owl-dt-popup-container {
+    border-radius: 1rem;
+}
+
+ul.pagination {
+    margin: 0 !important;
+}
+
+.dropdown-hidden.dropdown-toggle::after {
+    display: none;
+}
+
+
+//custom sweetalert2
+.swal2-cancel.swal2-styled, .swal2-confirm.swal2-styled{
+    border-radius: 0.5rem;
+}
+.swal2-confirm.swal2-styled{
+    background-color: var(--bs-blue);
+}
+.swal2-modal{
+    border-radius: 1rem !important;
+}
+.angular-editor-wrapper{
+    background: white;
+}
+.ae-font.ae-picker{
+    border-radius: .25rem;
+}
+.cdk-overlay-container{
+    z-index: 9999;
+}

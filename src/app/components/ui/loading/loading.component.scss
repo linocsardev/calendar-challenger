@@ -1,0 +1,57 @@
+// .loading{
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background: red;
+// }
+
+.loading {
+    left: 0;
+    right: 0;
+    z-index: 99999999999999;
+
+    &.all {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+.load-box {
+    width: 250px;
+    background: var(--fuse-bg-card);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0px 3px 10px #0000003b;
+    padding: 0.5rem 0;
+    img {
+        max-width: 100%;
+        max-height: 100px;
+        display: block;
+        margin: auto;
+    }
+    .texto {
+        font-size: 15px;
+    }
+    ._texto {
+        justify-content: center;
+        // margin-top: 15px;
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Opacidad inicial al inicio de la animación */
+    }
+    100% {
+        opacity: 1; /* Opacidad final al final de la animación */
+    }
+}
+
+.load-animation {
+    opacity: 0; /* Inicialmente establecemos la opacidad en 0 */
+    animation: fadeIn .5s ease forwards; /* Aplicamos la animación fadeIn durante 1 segundo */
+}

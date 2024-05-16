@@ -1,0 +1,34 @@
+<h2>Lista de tareas</h2>
+
+<div class="table_container">
+  <button class="btn btn-primary btn-md m-1" (click)="add()">Adicionar</button>
+  <table class="table table-bordered table-xl">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>descripcion</th>
+        <th>fecha</th>
+        <th>Hora</th>
+        <th>Estado</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of tasks; track $index) {
+        <tr>
+          <td>{{item.id}}</td>
+          <td>{{item.nombre}}</td>
+          <td>{{item.descripcion}}</td>
+          <td>{{item.fecha}}</td>
+          <td>{{item.hora}}</td>
+          <td>{{item.estado}}</td>
+          <td>
+            <button class="btn btn-outline-success btn-sm m-1" (click)="update(item)">Editar</button>
+            <button class="btn btn-outline-danger btn-sm " (click)="delete(item)">Eliminar</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

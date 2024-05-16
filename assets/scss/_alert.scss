@@ -1,0 +1,247 @@
+// // NOTAS ESTATICAS
+// ._nota {
+//     font-size: 12px;
+//     background: transparent;
+//     padding: 5px;
+//     // text-align: center;
+//     font-weight: 600;
+//     // color: #ffceca;
+//     color: #4b83fe;
+//     background: white;
+//     font-style: italic;
+//     margin: 15px 0;
+//     display: flex;
+//     align-items: center;
+//     // border: 1px solid #dedede;
+//     // border-style: dotted;
+//     &.red {
+//         /* color: #ff0000;
+//         border-color: red;  */
+//         // background-color: #fbe9e7;
+//         // color: #d50000;
+//         // border-color: #d50000;
+//         background-color: #fbe9e7;
+//         color: #d50000;
+//     }
+
+//     ._icons {
+//         padding: 0 10px;
+//         font-size: 2em;
+//         margin-top: -5px;
+//     }
+
+//     &.green {
+//         color: #009105;
+//         border-color: #47d810;
+//         // color: #36f13d;
+//         // border-color: #47d810;
+//     }
+//     p {
+//         margin: 0;
+//     }
+// }
+
+// NOTAS ESTATICAS
+._nota {
+    font-size: 15px;
+    background: transparent;
+    padding: 5px;
+    // text-align: center;
+    font-weight: 600;
+    // color: #ffceca;
+    color: #4b83fe;
+    background: white;
+    font-style: italic;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    // border: 1px solid #dedede;
+    // border-style: dotted;
+
+    &.red {
+        /* color: #ff0000;
+        border-color: red;  */
+        // background-color: #fbe9e7;
+        // color: #d50000;
+        // border-color: #d50000;
+        background-color: #fbe9e7;
+        color: #d50000;
+    }
+
+    a.btn {
+        margin: 10px auto;
+        display: block;
+        width: fit-content;
+    }
+
+    ._icons {
+        padding: 0 10px;
+        font-size: 2em;
+        margin-top: -5px;
+    }
+
+    &.green {
+        // color: #36f13d;
+        color: #00a43c;
+        border-color: #47d810;
+    }
+
+    .resaltar {
+        font-size: 20px;
+        // margin-bottom: 10px;
+    }
+    p {
+        margin: 0;
+    }
+
+    &._center {
+        & > div:nth-child(2) {
+            flex-grow: 1;
+            text-align: center;
+        }
+    }
+
+    &.normal {
+        color: #676767;
+    }
+    &._normal {
+        font-weight: normal;
+        color: #544f4f;
+        b {
+            font-weight: bold;
+            color: #007bff;
+        }
+    }
+
+    &._resaltar {
+        background: #007bff;
+        color: white !important;
+    }
+
+    &._orange {
+        background: #ff9800;
+        color: white !important;
+    }
+    &._fucsia {
+        background: #e91e63;
+        color: white !important;
+    }
+}
+//NOTAS FLOTANTES
+.container_nota_flotante {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    z-index: 2;
+    ._nota_flotante {
+        font-size: 13px;
+        font-weight: 700;
+        z-index: 9999;
+        border: none;
+        min-height: 50px;
+        color: #4b83fe;
+        padding: 10px;
+        background: white;
+        ._icons {
+            float: left;
+            padding: 0 10px;
+            font-size: 2em;
+            margin-top: -5px;
+        }
+        &.error {
+            //  background: #fc4237;
+            //  color: white;
+
+            background-color: #fbe9e7;
+            color: #d50000;
+        }
+        &.info {
+        }
+    }
+}
+
+._estados {
+    text-align: center;
+    font-weight: bold;
+    padding: 0.1rem 0.75rem;
+    border-radius: 0.5rem;
+
+    width: fit-content;
+    margin: 0 auto;
+
+    &._estados1,
+    &._estadosFinalizado,
+    &._estadosAtendido {
+        color: #4b83fe;
+        background: #ebf2ff;
+    }
+
+    &._estados0,
+    &._estadosBloqueado,
+    &._estadosInactivo {
+        color: red;
+        background: #ffdede;
+    }
+    &._estados2,
+    &._estadosPendiente,
+    &._estadosActivo {
+        color: #26cc2c;
+        background: #dcffe4;
+    }
+    &._estados3,
+    &._estadosPendiente {
+        color: #313131;
+        background: #ffefbe;
+    }
+
+    // RECIBIDO - 1
+    &.er1 {
+        // background: #ec175d;
+        background: #ff9b1a;
+
+        color: #fff9fc;
+    }
+
+    &.e0 {
+        background: #387fff;
+        color: #eef4ff;
+    }
+    // ATENDIDO - 2
+    &.e2 {
+        background: #313131;
+        // background: #3F51B5;
+        color: #f0f2ff;
+    }
+    // ENTREGADO - 3
+    &.e1 {
+        // background: #d00b4c;
+        background: #d00b4c;
+        color: #fffafb;
+    }
+
+    &.e6 {
+        background: #0bd013;
+        color: #e6ffe7;
+    }
+    // CONFIRMADO - 4
+    &.e4 {
+        // color: #dc8300;
+        // background: #fffcf0;
+        color: #fff;
+        background: #5282f2;
+        border-color: #00000021;
+    }
+    &.e5 {
+        background: #dc8300;
+        color: #fffcf0;
+    }
+    // CONFIRMADO - 5
+    &.e3 {
+        // background: red;
+        background: #ff1010;
+        color: #fff1f1;
+    }
+}

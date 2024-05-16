@@ -1,0 +1,54 @@
+.usuario_detalle {
+    --hover: #e9ecef;
+    --border: #d2d2d2;
+    --font_gray: rgb(110, 110, 110);
+    --blue: #598dd9;
+
+    color: var(--font_gray);
+    width: 320px;
+    height: 135px;
+    background: white;
+    border: 1px solid var(--border);
+    position: absolute;
+    top: 12.5em;
+    left: 13em;
+    z-index: 20;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0px 2px 6px rgb(196, 196, 196);
+    display: none;
+    &.active {
+        display: block;
+    }
+    .body_usuario {
+        padding: 1.5em 1em;
+        display: flex;
+        .foto_usuario {
+            border-radius: 50%;
+            overflow: hidden;
+            height: 55px;
+            width: 55px;
+            img {
+                height: 55px;
+            }
+        }
+        .datos_usuario {
+            margin-left: 1em;
+            font-size: 1.2em;
+            .correo_usuario {
+                font-size: 0.8em;
+            }
+        }
+    }
+    .footer_usuario {
+        background: var(--hover);
+        color: var(--font_gray);
+        border-top: 1px solid var(--border);
+        padding: 0.5em 1em;
+        .origen {
+            font-weight: bold;
+            font-size: 1em;
+            color: var(--blue);
+        }
+    }
+}

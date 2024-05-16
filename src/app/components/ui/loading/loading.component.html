@@ -1,0 +1,22 @@
+<div class="loading d-flex justify-content-center align-items-center {{addClass}} load-animation">
+    <!-- load-box -->
+    <!-- d-flex -->
+    <div class="box load-box ">
+        <img [src]="img" alt="">
+        <div class="d-flex align-items-center _texto">
+            <div class="texto">{{text}}</div>
+            <div class="load">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        @if(showOption){
+        <div class="text-center mt-2">
+            <button (click)="emitir('detener')" class="btn btn-danger btn-md-custom" type="button">
+                Detener
+            </button>
+        </div>
+        }
+    </div>
+</div>
