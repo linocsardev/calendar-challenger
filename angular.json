@@ -35,8 +35,11 @@
               "src/assets"
             ],
             "styles": [
+
               "assets/scss/template1.scss",
               "src/styles.scss"
+
+
             ],
             "scripts": []
           },

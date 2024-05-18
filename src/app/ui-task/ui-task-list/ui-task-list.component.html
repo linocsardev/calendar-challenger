@@ -2,7 +2,7 @@
 
 <div class="table_container">
   <button class="btn btn-primary btn-md m-1" (click)="add()">Adicionar</button>
-  <table class="table table-bordered table-xl">
+  <table class="table table-sm table-box table-fixed">
     <thead>
       <tr>
         <th>Id</th>
@@ -18,14 +18,20 @@
       @for (item of tasks; track $index) {
         <tr>
           <td>{{item.id}}</td>
-          <td>{{item.nombre}}</td>
-          <td>{{item.descripcion}}</td>
-          <td>{{item.fecha}}</td>
-          <td>{{item.hora}}</td>
-          <td>{{item.estado}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.description}}</td>
+          <td>{{item.date}}</td>
+          <td>{{item.hour}}</td>
+          <td>{{item.state}}</td>
           <td>
-            <button class="btn btn-outline-success btn-sm m-1" (click)="update(item)">Editar</button>
-            <button class="btn btn-outline-danger btn-sm " (click)="delete(item)">Eliminar</button>
+            <div class="d-flex justify-content-center align-item-center gap-1">
+              <button class="btn btn-outline-success btn-sm" (click)="update(item)">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </button>
+              <button class="btn btn-outline-danger btn-sm" (click)="delete(item)">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
           </td>
         </tr>
       }

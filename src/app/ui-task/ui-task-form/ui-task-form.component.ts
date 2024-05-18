@@ -4,7 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ControlMessagesComponent } from '../../components/ui/control-messages/control-messages.component';
 import { LoadingComponent } from '../../components/ui/loading/loading.component';
-import { ITask } from '../ui-task.interface';
+import { ITask, ITaskAdd } from '../ui-task.interface';
 import { ETaskState } from '../helpers';
 import { UiTaskService } from '../ui-task.service';
 
@@ -24,15 +24,27 @@ export class UiTaskFormComponent {
 
 
   @Input() action = 'add';
+  @Input() item?: ITask;
+  @Input() isModal:boolean= true;
+
   @Output() eventChange = new EventEmitter<EventChange<ITask | undefined>>();
 
   private modalActiveService = inject(NgbActiveModal)
   private taskServise = inject(UiTaskService)
 
 
-  isModal:boolean= true;
   submit: boolean = false;
   loading: boolean = false;
+
+  ngOnInit() {
+    if(this.action == 'update'){
+      alert(`Vamos a editar estos datos ${this.item}`)
+
+    }else{
+
+    }
+  }
+
 
   form = new FormGroup({
     nombre: new FormControl('', {validators: [Validators.required], nonNullable: true}),
@@ -62,13 +74,14 @@ export class UiTaskFormComponent {
     this.loading = true
     let datosForm = this.form.value;
     if(this.action == 'add'){
-      let newdata: ITask = {
-        id: Math.floor(Math.random() * 1000) + 1,
-        nombre: datosForm.nombre!,
-        descripcion: datosForm.descripcion!,
-        fecha: datosForm.fecha!,
-        hora: datosForm.hora!,
-        estado: ETaskState.PENDIENTE,
+      let newdata: ITaskAdd = {
+        name: datosForm.nombre!,
+        description: datosForm.descripcion!,
+        date: datosForm.fecha!,
+        hour: datosForm.hora!,
+        state: ETaskState.PENDIENTE,
+        createBy: "1",
+        idinstitucion: "1"
       }
       this.loading = true;
       let response = await this.taskServise.add(newdata)
@@ -77,9 +90,16 @@ export class UiTaskFormComponent {
         if(this.isModal){
           this.modalActiveService.close(response.data)
         }else{
-          this.eventChange.emit({ event: "add", data: response.data  })
+          this.eventChange.emit({ event: 'add', data: response.data})
         }
       }
+      // if(response.state == 'success'){
+      //   if(this.isModal){
+      //     this.modalActiveService.close(response.data)
+      //   }else{
+      //     this.eventChange.emit({ event: "add", data: response.data  })
+      //   }
+      // }
     }
   }
 

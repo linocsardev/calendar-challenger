@@ -1,0 +1,29 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ title }}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+
+    </button>
+</div>
+<div class="modal-body ">
+    @if(typeContent == 1){
+        <div >
+            <div [innerHTML]="message"></div>
+        </div>
+    }
+    @if(typeContent == 2){
+        @if(messaget){
+            <div >
+                <ng-container *ngTemplateOutlet="messaget">
+                </ng-container>
+            </div>
+        }
+    }
+</div>
+<div class="modal-footer jaspero-confirmation">
+    @if(btnCancelText != '-'){
+        <button type="button" class="btn btn-outline-secondary btn-lg-medio mr-2" (click)="decline()">{{ btnCancelText }}</button>
+    }
+    @if(btnOkText != '-'){
+        <button type="button" class="btn btn-primary primary btn-lg-medio" (click)="accept()">{{ btnOkText }}</button>
+    }
+</div>

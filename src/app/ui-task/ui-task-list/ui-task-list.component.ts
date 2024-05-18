@@ -23,15 +23,14 @@ export class UiTaskListComponent {
   }
 
 
-  async list(){
-    let result:ITask[] = await this.taskService.list()
-    console.log("result", result)
-    if(result){
-      this.tasks = result
-      console.log("Las tareas : ",this.tasks)
-    }else{
-      console.log("No hay datos")
-    }
+  list(){
+    this.taskService.list().subscribe(resp=>{
+      if(resp){
+
+      }
+    })
+
+
   }
 
 
@@ -43,9 +42,23 @@ export class UiTaskListComponent {
     this.openForm('update', item)
 
   }
-  openForm(action = 'add', item?:ITask ){
+  async openForm(action = 'add', item?:ITask ){
     try {
       let ref = this.modalService.open(UiTaskFormComponent, { animation: true, backdrop: 'static', size: 'lg', fullscreen: 'xl'})
+      ref.componentInstance.action = action
+
+      if(action == 'update'){
+        ref.componentInstance.item = item;
+      }
+
+      let task:ITask = await ref.result
+
+      if(action == 'add'){
+        this.tasks?.unshift(task)
+      }else if(action == "update"){
+        if(!item) return;
+        Object.assign(item, task)
+      }
     } catch (error) {
 
     }
